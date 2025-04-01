@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Layout, Menu, Typography } from 'antd';
-import { PieChartOutlined, UserOutlined, FileTextOutlined, CommentOutlined } from '@ant-design/icons';
+import { PieChartOutlined, UserOutlined, FileTextOutlined, CommentOutlined, CameraOutlined } from '@ant-design/icons';
 import GoodPostureNote from './components/GoodPostureNote';
 import UserProfile from './components/UserProfile';
 import PostureAnalysis from './components/PostureAnalysis';
