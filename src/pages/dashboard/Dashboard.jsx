@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Layout, Menu, Typography } from 'antd';
-import { PieChartOutlined, UserOutlined, FileTextOutlined, CommentOutlined, CameraOutlined } from '@ant-design/icons';
+import { PieChartOutlined, UserOutlined, FileTextOutlined, CommentOutlined } from '@ant-design/icons';
 import GoodPostureNote from './components/GoodPostureNote';
 import UserProfile from './components/UserProfile';
 import PostureAnalysis from './components/PostureAnalysis';
 import Recommendations from './components/Recommendations';
+import firebase from 'firebase/compat/app';
 
-const { Header, Content, Sider } = Layout;
+const { Content, Sider } = Layout;
 const { Title } = Typography;
 
 const Dashboard = () => {
@@ -32,31 +33,20 @@ const Dashboard = () => {
   };
 
   return (
-    <Layout style={{ minHeight: '100vh' }}>
-      <Sider>
+    <Layout style={{ minHeight: '100vh', overflow: 'hidden' }}>
+      <Sider style={{ height: '100vh', position: 'fixed', left: 0, top: 0, bottom: 0 }}>
         <div style={{ height: '32px', margin: '16px', color: '#fff', textAlign: 'center' }}>
           Posture Dashboard
         </div>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['note']} onClick={handleMenuClick}>
-          <Menu.Item key="note" icon={<FileTextOutlined />}>
-            Posture Note
-          </Menu.Item>
-          <Menu.Item key="profile" icon={<UserOutlined />}>
-            User Profile
-          </Menu.Item>
-          <Menu.Item key="analysis" icon={<PieChartOutlined />}>
-            Posture Analysis
-          </Menu.Item>
-          <Menu.Item key="recommendations" icon={<CommentOutlined />}>
-            Recommendations
-          </Menu.Item>
+          <Menu.Item key="note" icon={<FileTextOutlined />}>Posture Note</Menu.Item>
+          <Menu.Item key="profile" icon={<UserOutlined />}>User Profile</Menu.Item>
+          <Menu.Item key="analysis" icon={<PieChartOutlined />}>Posture Analysis</Menu.Item>
+          <Menu.Item key="recommendations" icon={<CommentOutlined />}>Recommendations</Menu.Item>
         </Menu>
       </Sider>
-      <Layout>
-        <Header style={{ background: '#fff', padding: '0 16px' }}>
-          <Title level={2}>Dashboard</Title>
-        </Header>
-        <Content style={{ margin: '16px' }}>
+      <Layout style={{ marginLeft: 200 }}>
+        <Content style={{ margin: '0', padding: '16px', minHeight: '100vh', overflow: 'auto' }}>
           {renderContent()}
         </Content>
       </Layout>

@@ -7,7 +7,7 @@ const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   const cardStyle = {
-    maxWidth: '400px',
+    maxWidth: '800px',
     margin: '0 auto',
     marginTop: '100px',
   };
@@ -24,4 +24,4 @@ const AuthPage = () => {
   );
 };
 
-export default AuthPage;
+export default AuthPage; 

@@ -1,43 +1,103 @@
 /* CameraScreen.css */
 .camera-screen {
-    padding: 20px;
-  }
-  
-  .camera-container {
-    position: relative;
-    width: 100%;
-    max-width: 640px;
-    margin: 0 auto;
-  }
-  
-  video {
-    width: 100%;
-    border: 2px solid #333;
-    border-radius: 10px;
-  }
-  
-  canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.main-title {
+  text-align: center;
+  margin-bottom: 32px !important;
+  color: #1890ff;
+}
+
+.camera-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: #f0f2f5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.canvas-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  justify-content: center;
+}
+
+.score-display {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.feedback-alert {
+  margin: 20px 0;
+}
+
+.metrics-title {
+  margin-bottom: 16px !important;
+  color: #595959;
+}
+
+.metrics-grid {
+  margin-top: 16px;
+}
+
+.metric-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.metric-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #8c8c8c;
+}
+
+.tips-card {
+  margin-top: 24px;
+}
+
+.tips-list {
+  padding-left: 24px;
+}
+
+.tips-list li {
+  margin-bottom: 12px;
+  color: #595959;
+}
+
+@media (max-width: 992px) {
+  .camera-screen {
+    padding: 16px;
   }
   
   .controls {
-    margin-top: 16px;
-    text-align: center;
+    flex-wrap: wrap;
   }
   
-  .controls button {
-    margin: 0 8px;
+  .metrics-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .bad-posture-warning {
-    margin-top: 16px;
-    text-align: center;
-    padding: 10px;
-    background-color: #ffebee;
-    border: 1px solid #ffcdd2;
-    border-radius: 5px;
-  }
+}

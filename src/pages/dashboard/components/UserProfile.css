@@ -1,41 +1,69 @@
-/* UserProfile.css */
-
 .user-profile-container {
-    max-width: 600px;
-    margin: 40px auto;
+  max-width: 700px;
+  width: 40%;
+  margin: 40px auto;
+  padding: 32px;
+  background: #9c8b8b;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile-header {
+  text-align: center;
+  margin-bottom: 32px;
+  color: #193e61;
+}
+
+.user-profile-form {
+  width: 100%;
+}
+
+.profile-image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.profile-avatar {
+  background-color: #f0f2f5;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.submit-button {
+  width: 100%;
+  margin-top: 24px;
+  height: 40px;
+  color: #193e61;
+}
+
+@media (max-width: 768px) {
+  .user-profile-container {
+    width: 100%;
+    margin: 20px auto;
     padding: 24px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-row {
+    flex-direction: column;
   }
   
-  .user-profile-header {
-    text-align: center;
-    margin-bottom: 24px;
-    font-size: 28px;
-    color: #333;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
   }
-  
-  .user-profile-form {
-    width: 100%;
-  }
-  
-  .user-profile-form .ant-form-item {
-    margin-bottom: 16px;
-  }
-  
-  .user-profile-form .ant-input,
-  .user-profile-form .ant-select-selector,
-  .user-profile-form .ant-input-textarea {
-    border-radius: 4px;
-    padding: 8px;
-    font-size: 16px;
-  }
-  
-  .submit-button {
-    width: 100%;
-    font-size: 16px;
-    padding: 10px;
-  }
-  
+}
